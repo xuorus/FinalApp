@@ -1,5 +1,6 @@
 import React from 'react';
-import { TouchableOpacity, Text, TextInput, View, Image, Alert, StyleSheet } from 'react-native';
+import { Text, View, Image, Alert, StyleSheet } from 'react-native';
+import { Button, TextInput} from 'react-native-paper';
 import MainStyles from '../components/config/styles';
 
 
@@ -12,21 +13,28 @@ const RegistrationPage = ({ navigation }) => {
     <View style={MainStyles.container}>
       <Image style={MainStyles.logo} source={require('../assets/JMGH4wX.png')} />
       <Text style={styles.textTitle}>Create Account</Text>
-      <TextInput style={MainStyles.input} 
+      <TextInput style={{ marginTop: 10 }}
+      mode="outlined" 
       placeholder="Name" onChangeText={setName} />
-      <TextInput style={MainStyles.input} 
+      <TextInput style={{ marginTop: 10 }}
+      mode="outlined" 
       placeholder="Email" onChangeText={setEmail} />
-      <TextInput style={MainStyles.input} 
+      <TextInput style={{ marginTop: 10 }} 
+      mode="outlined"
       placeholder="Password" onChangeText={setPassword} secureTextEntry />
       
-      <TouchableOpacity style={MainStyles.buttonvis} 
-      onPress={() => {navigation.navigate('Home'); Alert.alert('Successfully registered!') }} >
-        <Text style={MainStyles.textColor}>SIGN UP</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={MainStyles.buttoninvis} 
-      onPress={() => navigation.navigate('Login')} >
-        <Text>GO TO LOGIN</Text>
-      </TouchableOpacity>
+      <Button
+      onPress={() => {navigation.navigate('Home'); 
+      Alert.alert('Successfully registered!') }}
+       mode="contained"
+       style={{ marginTop: 10 }}>
+       SIGN UP
+      </Button>
+      <Button 
+      onPress={() => navigation.navigate('Login')}
+      style={{ marginTop: 10 }}>
+      GO TO LOGIN
+      </Button>
     </View>
   );
 };

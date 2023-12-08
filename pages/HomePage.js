@@ -1,6 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, View, Image, Text, StyleSheet} from 'react-native';
 import MainStyles from '../components/config/styles';
+import { Button } from 'react-native-paper';
 
 const HomePage = ({ navigation }) => {
   return (
@@ -8,10 +9,13 @@ const HomePage = ({ navigation }) => {
       <Image style={MainStyles.logo} source={require('../assets/JMGH4wX.png')} />
       <Text style={styles.textTitle}>Let's Start</Text>
       <Text style={styles.textBody}>Welcome to your personal space.</Text>
-      <TouchableOpacity style={MainStyles.buttonvis} 
-      onPress={() => navigation.navigate('Landing')} >
-        <Text style={MainStyles.textColor}>LOGOUT</Text>
-      </TouchableOpacity>
+      <Button
+      onPress={() => navigation.navigate('Landing')}
+      mode='contained'
+      style={{ marginTop: 10 }}
+      >
+      LOGOUT
+      </Button>
     </View>
   );
 };

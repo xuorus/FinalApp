@@ -1,5 +1,6 @@
 import React from 'react';
-import { TouchableOpacity, TextInput, View, Image, Text, Alert, StyleSheet } from 'react-native';
+import { TouchableOpacity,  View, Image, Text, Alert, StyleSheet } from 'react-native';
+import { Button, TextInput } from 'react-native-paper';
 import MainStyles from '../components/config/styles';
 
 
@@ -10,16 +11,25 @@ const AccountRecoveryPage = ({ navigation }) => {
     <View style={MainStyles.container}>
       <Image style={MainStyles.logo} source={require('../assets/JMGH4wX.png')} />
       <Text style={styles.textTitle}>Restore Password</Text>
-      <TextInput style={MainStyles.input} placeholder="Email" onChangeText={setEmail} />
+      <TextInput style={{ marginTop: 10 }}  
+      mode="outlined"
+      placeholder="Email" onChangeText={setEmail} />
       
-      <TouchableOpacity style={MainStyles.buttonvis} 
-      onPress={() => {navigation.navigate('Login'); Alert.alert('Account recovery successful!') }} >
-        <Text style={MainStyles.textColor}>SEND RESET CODE</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={MainStyles.buttoninvis} 
-      onPress={() => navigation.navigate('Login')} >
-        <Text>BACK TO LOGIN</Text>
-      </TouchableOpacity>
+      <Button
+      onPress={() => {navigation.navigate('Login'); Alert.alert('Account recovery successful!') }}
+      mode='contained'
+      style={{ marginTop: 10 }}
+      >
+      SEND RESET CODE
+      </Button>
+      <Button
+      onPress={() => navigation.navigate('Login')}
+      mode='text'
+      style={{ marginTop: 10 }}
+      >
+      BACK TO LOGIN
+      </Button>
+      
     </View>
   );
 };
