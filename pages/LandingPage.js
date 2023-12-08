@@ -8,7 +8,7 @@ const LandingPage = ({ navigation }) => {
     <View style={MainStyles.container}>
       <Image style={MainStyles.logo} source={require('../assets/JMGH4wX.png')} />
       <Text style={styles.textTitle}>Alpha</Text>
-      <Text style={styles.textBody}>The easiest way to start up your day.</Text>
+      <Text style={styles.textBody}>The easiest way to start up your day Welcome.</Text>
       
       <TouchableOpacity style={MainStyles.buttonvis} 
       onPress={() => navigation.navigate('Login')}>
